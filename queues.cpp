@@ -39,7 +39,17 @@ class Queues{
         else
             REAR = REAR + 1;
     }
-    QUEUE_ARRAy[REAR] = num;
+    queue_arraty[REAR] = num;
+}
+
+voidremove()
+{
+    if (FRONT == -1)
+    {
+        COUT << "Queue underflow\n";
+        return;
+    }
+    cout << "\nThe element deleted from the queue is: " << queue_array[FRONT] << "\n";
 }
 
 }
