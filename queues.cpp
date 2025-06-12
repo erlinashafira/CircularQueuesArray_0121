@@ -18,12 +18,13 @@ class Queues {
         cout << "Enter a number: ";
         cin >> num;
         cout << endl;
-    }
+    
 
     //1. Cek apakah antrian penuh
     if ((FRONT == 0 && REAR == max - 1) || (FRONT == REAR + 1))
     {
-        cout << "\nQueue overflow\n"
+        cout << "\nQueue overflow\n";
+        return;
     }
 
     //2. Cek apakah antrian kosong
@@ -39,14 +40,14 @@ class Queues {
         else
             REAR = REAR + 1;
     }
-    queue_arraty[REAR] = num;
+    queue_array[REAR] = num;
 }
 
-voidremove()
+void remove()
 {
     if (FRONT == -1)
     {
-        COUT << "Queue underflow\n";
+        cout << "Queue underflow\n";
         return;
     }
     cout << "\nThe element deleted from the queue is: " << queue_array[FRONT] << "\n";
@@ -67,7 +68,7 @@ voidremove()
 }
 
 void display(){
-    int FRONT_posisition = FRONT;
+    int FRONT_position = FRONT;
     int REAR_position = REAR;
 
     if (FRONT == -1)
@@ -79,9 +80,9 @@ void display(){
     cout << "\nElements int the queue are...\n";
 
     //jika Fr
-    if (FRONT_posisition <= REAR_position)
+    if (FRONT_position <= REAR_position)
     {
-        while (FRONT_posisition <= REAR_position)
+        while (FRONT_position <= REAR_position)
         {
             cout << queue_array[FRONT_position] << " ";
             FRONT_position++;
@@ -91,20 +92,22 @@ void display(){
     else{
         while (FRONT_position <= max - 1)
         {
-            cout << queue_array[FRONT_posisition] << " ";
-            FRONT_posisition++;
+            cout << queue_array[FRONT_position] << " ";
+            FRONT_position++;
         }
-        FRONT_posisition = 0;
+        FRONT_position = 0;
     }
 
-     while (FRONT_posisition <= REAR_position)
+     while (FRONT_position <= REAR_position)
         {
             cout << queue_array[FRONT_position] << " ";
             FRONT_position++;
         }
         cout << endl;
-    };
+    }
+};
 
+int main()
     {
         Queues q;
         char ch;
@@ -126,12 +129,12 @@ void display(){
 
                 switch (ch)
                 {
-                    case '1';
+                    case '1':
                     {
                         q.insert();
                         break;
                     }
-                    case '2';
+                    case '2':
                     {
                         q.remove();
                         break;
@@ -151,10 +154,10 @@ void display(){
                         break;
                     }
                 }
-    }
-    catch (exception &e)
-    {
-        cout << "Check for the values entered." << endl;
-     }
-    }
+            }
+            catch (exception &e)
+            {
+                cout << "Check for the values entered." << endl;
+            }
+        }
 };
