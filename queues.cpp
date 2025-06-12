@@ -76,5 +76,17 @@ void display(){
         return;
     }
 
+    cout << "\nElements int the queue are...\n";
+
+    //jika Fr
+    if (FRONT_posisition <= REAR_position)
+    {
+        while (FRONT_posisition <= REAR_position)
+        {
+            cout << queue_array[FRONT_position] << " ";
+            FRONT_position++;
+        }
+        cout << endl;
+    }
 
 }
