@@ -35,6 +35,7 @@ class Queues {
     }
     else
     {
+        //Jika REAR berada di posisi terakhir array, kembali ke awal array
         if (REAR == max - 1)
             REAR = 0;
         else
@@ -45,6 +46,7 @@ class Queues {
 
 void remove()
 {
+    //cek apakah antrian kosong
     if (FRONT == -1)
     {
         cout << "Queue underflow\n";
@@ -60,6 +62,7 @@ void remove()
     }
     else
     {
+        //jika elemen yang di hapus berada di posisi terkahir array, kembali ke awal array
         if (FRONT == max - 1)
             FRONT = 0;
         else
@@ -71,6 +74,7 @@ void display(){
     int FRONT_position = FRONT;
     int REAR_position = REAR;
 
+    //cek apakah antrian kosong
     if (FRONT == -1)
     {
         cout << "Queue is empty\n";
@@ -79,7 +83,7 @@ void display(){
 
     cout << "\nElements int the queue are...\n";
 
-    //jika Fr
+    //jika FRONT_position <= REAR_position, iterasi dari front hingga REAR
     if (FRONT_position <= REAR_position)
     {
         while (FRONT_position <= REAR_position)
@@ -89,7 +93,9 @@ void display(){
         }
         cout << endl;
     }
-    else{
+    else
+    {
+        //jika FRONT_position > REAR_position, iterasi dari front hingga REAR
         while (FRONT_position <= max - 1)
         {
             cout << queue_array[FRONT_position] << " ";
@@ -98,7 +104,7 @@ void display(){
         FRONT_position = 0;
     }
 
-     while (FRONT_position <= REAR_position)
+        while (FRONT_position <= REAR_position)
         {
             cout << queue_array[FRONT_position] << " ";
             FRONT_position++;
