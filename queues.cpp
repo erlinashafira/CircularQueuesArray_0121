@@ -88,5 +88,13 @@ void display(){
         }
         cout << endl;
     }
+    else{
+        while (FRONT_position <= max - 1)
+        {
+            cout << queue_array[FRONT_posisition] << " ";
+            FRONT_posisition++;
+        }
+        FRONT_posisition = 0;
+    }
 
 }
