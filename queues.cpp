@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-class Queues{
+class Queues {
     private :
     static const int max = 5;
     int FRONT, REAR;
@@ -145,8 +145,16 @@ void display(){
                     {
                         return 0;
                     }
+                    default:
+                    {
+                        cout << "Invalid option!!" << endl;
+                        break;
+                    }
                 }
-            
     }
-}
+    catch (exception &e)
+    {
+        cout << "Check for the values entered." << endl;
+     }
     }
+};
