@@ -97,4 +97,17 @@ void display(){
         FRONT_posisition = 0;
     }
 
-}
+     while (FRONT_posisition <= REAR_position)
+        {
+            cout << queue_array[FRONT_position] << " ";
+            FRONT_position++;
+        }
+        cout << endl;
+    };
+
+    {
+        Queues q;
+        char ch;
+
+        while (true)
+    }
