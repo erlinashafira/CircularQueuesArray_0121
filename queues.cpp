@@ -32,8 +32,14 @@ class Queues{
         FRONT = 0; //2.A
         REAR = 0; //2.b
     }
-    else{
-        if REAR == max - 1
+    else
+    {
+        if (REAR == max - 1)
+            REAR = 0;
+        else
+            REAR = REAR + 1;
     }
+    QUEUE_ARRAy[REAR] = num;
+}
 
 }
